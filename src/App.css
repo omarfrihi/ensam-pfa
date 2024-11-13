@@ -1,38 +1,200 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Catamaran:400,800');
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.svg-font-color svg > path {
+  fill: var(--ifm-font-color-base);
 }
 
-.App-header {
-  background-color: #282c34;
+.queryBuilder {
+  min-width: 420px;
+}
+
+.validateQuery .queryBuilder .ruleGroup.queryBuilder-invalid {
+  background-color: rgba(102, 51, 153, 0.4);
+}
+.validateQuery .queryBuilder .ruleGroup.queryBuilder-invalid .ruleGroup-addRule {
+  font-weight: bold !important;
+}
+.validateQuery .queryBuilder .ruleGroup.queryBuilder-invalid > .ruleGroup-header::after {
+  content: "Empty groups are considered invalid. Avoid them by using addRuleToNewGroups.";
+  color: white;
+}
+.validateQuery .queryBuilder .rule.queryBuilder-invalid .rule-value {
+  background-color: rgba(102, 51, 153, 0.4);
+}
+.validateQuery .queryBuilder .rule.queryBuilder-invalid .rule-value::placeholder {
+  color: rgb(71.4, 35.7, 107.1);
+}
+
+html[data-theme="dark"]
+  .validateQuery
+  .queryBuilder
+  .rule.queryBuilder-invalid
+  .rule-value::placeholder {
+  color: rgb(147.9, 94.35, 201.45);
+}
+
+.justifiedLayout .queryBuilder .ruleGroup-addGroup + button.ruleGroup-cloneGroup,
+.justifiedLayout .queryBuilder .ruleGroup-addGroup + button.ruleGroup-lock,
+.justifiedLayout .queryBuilder .ruleGroup-addGroup + button.ruleGroup-remove {
+  margin-left: auto !important;
+}
+.justifiedLayout .queryBuilder .rule-operators + button.rule-cloneRule,
+.justifiedLayout .queryBuilder .rule-operators + button.rule-lock,
+.justifiedLayout .queryBuilder .rule-operators + button.rule-remove,
+.justifiedLayout .queryBuilder .rule-value + button.rule-cloneRule,
+.justifiedLayout .queryBuilder .rule-value + button.rule-lock,
+.justifiedLayout .queryBuilder .rule-value + button.rule-remove,
+.justifiedLayout .queryBuilder .control + button.rule-cloneRule,
+.justifiedLayout .queryBuilder .control + button.rule-lock,
+.justifiedLayout .queryBuilder .control + button.rule-remove,
+.justifiedLayout .queryBuilder .chakra-select__wrapper + button.rule-cloneRule,
+.justifiedLayout .queryBuilder .chakra-select__wrapper + button.rule-lock,
+.justifiedLayout .queryBuilder .chakra-select__wrapper + button.rule-remove {
+  margin-left: auto !important;
+}
+
+/*style.css*/
+body {
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  line-height: 1.5;
   min-height: 100vh;
+  background: #f3f3f3;
+  flex-direction: column;
+  margin: 0;
+}
+
+.main {
+  width:100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  .login{
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    transition: transform 0.2s;
+    width: 500px;
+    text-align: center;
+  }
+ 
+
+h1 {
+  color: #ed8615;
+}
+
+label {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-align: left;
+  color: #555;
+  font-weight: bold;
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: none;
   color: white;
+  cursor: pointer;
+  background-color: #ed8615;
+  width: 100%;
+  font-size: 16px;
 }
 
-.App-link {
-  color: #61dafb;
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.error{
+  color:red;
 }
+
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #dddddd;
+  color: #ed8615;
+}
+
+.navbar-brand {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-links li {
+  display: inline;
+}
+
+.navbar-links a {
+  color: #ed8615;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.navbar-links a:hover {
+  color: black;
+}
+
+.logout {
+  background-color: #ed8615;
+  border:none;
+  cursor: pointer;
+  border-radius: 1rem;
+  padding:0.5rem 1rem;
+
+}
+
+
+
+
+
