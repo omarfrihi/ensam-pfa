@@ -8,8 +8,7 @@ const Layout = () => {
   const handleLogout = () => {
     logout();
   };
-  const { isPending, data } = useMetadata();
-  console.log("mm", data);
+
   return (
     <div>
       <nav className="navbar">

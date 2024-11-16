@@ -1,18 +1,17 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import axiosInstance from "../axios";
+import { Etype } from "../fields";
 
-type Entity = {
+export type Entity = {
+  name?: string;
+  type?: Etype;
+  enum?: string[];
+  alias: string;
+  label?: string;
   tableName: string;
-  columns: {
-    propertyName: string;
-    type?: string;
-    enum?: string[];
-    relation?: Entity;
-  }[];
+  columns: Entity[];
 };
-export type MetaDataResponse = {
-  data: Entity[];
-};
+export type MetaDataResponse = Entity[];
 export const useMetadata = () => {
   const queryFn = () => {
     return axiosInstance.get<MetaDataResponse>("/metadata");
