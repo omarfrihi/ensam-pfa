@@ -15,7 +15,7 @@ const History = () => {
       <table>
         <tr>
           <th>Date de requette</th>
-          <th>Afficher</th>
+          <th>Details</th>
         </tr>
         {data?.data?.map((row) => (
           <tr key={row.createdAt}>
@@ -24,7 +24,7 @@ const History = () => {
               style={{ cursor: "pointer" }}
               onClick={() => setQuery(row.queryResult)}
             >
-              Afficher
+              <img src="/info.png" width={20} />
             </td>
           </tr>
         ))}

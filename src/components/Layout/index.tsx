@@ -10,7 +10,7 @@ const Layout = () => {
   };
 
   return (
-    <div>
+    <div className="app">
       <nav className="navbar">
         <a href="/">
           <img
@@ -26,9 +26,7 @@ const Layout = () => {
           <li>
             <a href="history">History</a>
           </li>
-          <button onClick={handleLogout} className="logout">
-            Se Deconecter
-          </button>
+          <button onClick={handleLogout}>Se Deconecter</button>
         </ul>
       </nav>
       <Outlet />

@@ -92,7 +92,7 @@ const Dashboard = () => {
   if (isMetadataLoading) return <FadeLoader color="#ed8615" />;
   if (isError) return <span>Error..</span>;
   return (
-    <>
+    <div className="dashboard">
       <label htmlFor="tables"> </label>
       <fieldset>
         <legend>Choisir un tableau</legend>
@@ -156,7 +156,7 @@ const Dashboard = () => {
       )}
 
       {resultQueryData && <Table data={resultQueryData?.data} />}
-    </>
+    </div>
   );
 };
 export default Dashboard;

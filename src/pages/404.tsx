@@ -3,7 +3,7 @@ const NotFound = () => (
     <h1>404 Error Page </h1>
 
     <div>
-      <a href="/dashboard">Home</a>
+      <a href="/">Home</a>
     </div>
   </div>
 );

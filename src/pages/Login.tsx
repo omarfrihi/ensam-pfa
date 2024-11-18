@@ -24,7 +24,7 @@ const LoginPage = () => {
   };
   const { token } = useAuth();
   if (token) {
-    return <Navigate to="/dashboard" />;
+    return <Navigate to="/" />;
   }
   return (
     <div className="main">
