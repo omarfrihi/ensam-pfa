@@ -27,7 +27,7 @@ const App = () => {
               </ProtectedRoute>
             }
           >
-            <Route path="dashboard" element={<Dashboard />} />
+            <Route index element={<Dashboard />} />
             <Route path="history" element={<History />} />
           </Route>
 

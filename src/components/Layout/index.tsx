@@ -12,14 +12,16 @@ const Layout = () => {
   return (
     <div>
       <nav className="navbar">
-        <img
-          src="https://www.clipartmax.com/png/full/298-2988095_guin%C3%A9e-bissau-banque-populaire-du-maroc.png"
-          width={50}
-        ></img>
+        <a href="/">
+          <img
+            src="https://www.clipartmax.com/png/full/298-2988095_guin%C3%A9e-bissau-banque-populaire-du-maroc.png"
+            width={50}
+          ></img>
+        </a>
 
         <ul className="navbar-links">
           <li>
-            <a href="/dashboard">Home</a>
+            <a href="/">Home</a>
           </li>
           <li>
             <a href="history">History</a>

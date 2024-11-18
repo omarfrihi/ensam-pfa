@@ -16,3 +16,18 @@ export const downloadcsv = (data: object[]) => {
   link.click();
   document.body.removeChild(link);
 };
+export const transformBooleans = (inputObj: any) => {
+  const transformedObj = {} as any;
+
+  for (const key in inputObj) {
+    if (inputObj[key] === true) {
+      transformedObj[key] = 1;
+    } else if (inputObj[key] === false) {
+      transformedObj[key] = 0;
+    } else {
+      transformedObj[key] = inputObj[key]; // Keep other values unchanged
+    }
+  }
+
+  return transformedObj;
+};

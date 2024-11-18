@@ -26,8 +26,9 @@ const Modal = ({ isOpen, onClose, children }: ModalProps) => {
         onClick={(e) => e.stopPropagation()}
         style={{
           background: "white",
-          height: "fit-content",
-          width: "fit-content",
+          maxHeight: "80vh",
+          overflow: "scroll",
+          maxWidth: "80vw",
           margin: "auto",
           padding: "2%",
           border: "2px solid #000",

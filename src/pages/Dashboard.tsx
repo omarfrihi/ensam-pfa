@@ -11,7 +11,7 @@ import { Etype, getFields } from "../fields";
 import { Entity, useMetadata } from "../hooks/useMetaData";
 import { useQueryResult } from "../hooks/useQueryResult";
 import escape from "js-string-escape";
-import { downloadcsv } from "../components/utils";
+import { downloadcsv, transformBooleans } from "../components/utils";
 import Table from "../components/Table";
 const initialQuery: RuleGroupType = { combinator: "and", rules: [] };
 type Column = {
@@ -76,13 +76,14 @@ const Dashboard = () => {
       parseNumbers: true,
     }),
   };
+  console.log(transformBooleans(preparedQuery.params));
   const {
     refetch,
     isFetching,
     isError: isResultError,
     data: resultQueryData,
   } = useQueryResult(
-    preparedQuery.params,
+    transformBooleans(preparedQuery.params),
     preparedQuery.select,
     preparedQuery.sql,
     tables
